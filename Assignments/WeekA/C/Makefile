@@ -1,4 +1,4 @@
-#HOME      := /Users/rvdg
+HOME      := /u/matthewm
 # Make sure you have BLIS installed in your home directory.
 BLAS_LIB  := $(HOME)/blis/lib/libblis.a
 BLAS_INC  := $(HOME)/blis/include/blis
@@ -12,7 +12,7 @@ FFLAGS     := $(CFLAGS)
 # set the range of experiments to be performed
 NREPEATS   := 3#       number of times each experiment is repeated.  The best time is reported.
 NFIRST     := 32#     smallest size to be timed.
-NLAST      := 3000#     largest size to be timed.
+NLAST      := 500#     largest size to be timed.
 NINC       := 32#     increment between sizes.
 
 LDFLAGS    := -lpthread -m64 -lm 

@@ -13,8 +13,9 @@ void GemmIPJ_Axpy( int m, int n, int k,
 
   for ( i=0; i<m; i++ )
     for ( p=0; p<k; p++ )
-       Axpy( n,    ,    ,    ,    ,    );
+       Axpy( n,alpha(i,p),&beta(p,0),ldB,&gamma(i,0) ,ldC );
 
   return;
 }
   
+ 
