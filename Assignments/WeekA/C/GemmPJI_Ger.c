@@ -12,7 +12,7 @@ void GemmPJI_Ger( int m, int n, int k,
   int p;
 
   for ( p=0; p<k; p++ )
-    GerJI_Axpy(    ,    ,    ,    ,    ,    ,    ,    ); 
+    GerJI_Axpy(n ,m ,&alpha(p,0) ,ldA ,&beta(0,p) ,1 ,C ,ldC ); 
 
   return;
 }

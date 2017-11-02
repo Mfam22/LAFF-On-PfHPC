@@ -21,10 +21,16 @@ void GemmIntrinsicsKernel_m4xn4( int k, double *A, int ldA,
     /* Declare a vector register to hold elements beta( p,0 ) and duplicate
        it in the register. */
     __m256d beta_p_0 = _mm256_broadcast_sd( &beta( p, 0) );
+    __m256d beta_p_1 = _mm256_broadcast_sd( &beta( p, 1) );
+    __m256d beta_p_2 = _mm256_broadcast_sd( &beta( p, 2) );
+    __m256d beta_p_3 = _mm256_broadcast_sd( &beta( p, 3) );
     
     /* update the first column of C with the current column of A times
        beta ( p,0 ) */
     gamma_0123_0 = _mm256_fmadd_pd( alpha_0123_p, beta_p_0, gamma_0123_0 );
+    gamma_0123_1 = _mm256_fmadd_pd( alpha_0123_p, beta_p_1, gamma_0123_1 );
+    gamma_0123_2 = _mm256_fmadd_pd( alpha_0123_p, beta_p_2, gamma_0123_2 );
+    gamma_0123_3 = _mm256_fmadd_pd( alpha_0123_p, beta_p_3, gamma_0123_3 );
     
     /* REPEAT for second, third, and fourth columns of C.  Notice that the 
        current column of A needs not be reloaded. */

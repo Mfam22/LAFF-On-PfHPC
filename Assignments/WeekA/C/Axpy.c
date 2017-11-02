@@ -6,7 +6,7 @@ void Axpy( int n, double alpha, double *x, int incx, double *y, int incy )
   int i;
 
   for ( i=0; i<n; i++ )
-    psi( i ) =  alpha * x[i] + psi(i);
+    psi( i ) =  alpha * chi(i) + psi(i);
   
   return;
 }

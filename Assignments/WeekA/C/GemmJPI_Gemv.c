@@ -12,7 +12,7 @@ void GemmJPI_Gemv( int m, int n, int k,
   int j;
 
   for ( j=0; j<n; j++ )
-    GemvJI_Axpy(    ,    ,    ,    ,    ,    ,    ,    ); 
+    GemvJI_Axpy( k ,m ,A ,ldA ,&beta(0,j) ,1 ,&gamma(0,j) ,1 ); 
 
   return;
 }
