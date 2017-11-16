@@ -59,6 +59,17 @@ test_GemmFiveLoops_4x4: driver_GemmFiveLoops_4x4.x
 
 # ---------------------
 
+TEST_OBJS_GEMMFIVELOOPS_8x4   := driver.o GemmFiveLoops_8x4.o Pack.o 
+
+driver_GemmFiveLoops_8x4.x: $(TEST_OBJS_GEMMFIVELOOPS_8x4) $(UTIL_OBJS)
+	$(LINKER) $(TEST_OBJS_GEMMFIVELOOPS_8x4) $(UTIL_OBJS) $(BLAS_LIB) -o driver_GemmFiveLoops_8x4.x $(LDFLAGS) 
+
+test_GemmFiveLoops_8x4: driver_GemmFiveLoops_8x4.x
+	echo "your_version = 'GemmFiveLoops8x4';" > output_data_GemmFiveLoops_8x4.m
+	echo "$(NREPEATS) $(NFIRST) $(NLAST) $(NINC)" | ./driver_GemmFiveLoops_8x4.x >> output_data_GemmFiveLoops_8x4.m
+
+# ---------------------
+
 TEST_OBJS_GEMMFIVELOOPS_12x4   := driver.o GemmFiveLoops_12x4.o 
 
 driver_GemmFiveLoops_12x4.x: $(TEST_OBJS_GEMMFIVELOOPS_12x4) $(UTIL_OBJS)

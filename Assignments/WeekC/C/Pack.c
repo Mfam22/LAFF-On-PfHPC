@@ -5,7 +5,7 @@
 
 #define min( x, y ) ( ( x ) < ( y ) ? x : y )
 
-#define MR 4
+#define MR 8
 #define NR 4
 #define MC 128
 #define KC 128

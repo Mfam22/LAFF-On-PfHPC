@@ -4,7 +4,7 @@
 #define alpha( i,j ) A[ (j)*ldA + (i) ]   // map alpha( i,j ) to array A
 #define beta( i,j )  B[ (j)*ldB + (i) ]   // map beta( i,j ) to array B
 #define gamma( i,j ) C[ (j)*ldC + (i) ]   // map gamma( i,j ) to array C
-#define MR 4
+#define MR 8
 #define NR 4
 
 void GemmIntrinsicsKernel_MRxNR( int, double *, int, double *, int,

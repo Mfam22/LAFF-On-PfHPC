@@ -6,7 +6,7 @@
 #define beta( i,j )  B[ (j)*ldB + (i) ]   // map beta( i,j ) to array B
 #define gamma( i,j ) C[ (j)*ldC + (i) ]   // map gamma( i,j ) to array C
 
-#define MR 4
+#define MR 8
 #define NR 4
 
 #define MC 128

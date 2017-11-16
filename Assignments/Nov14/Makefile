@@ -12,7 +12,7 @@ FFLAGS     := $(CFLAGS)
 # set the range of experiments to be performed
 NREPEATS   := 3#       number of times each experiment is repeated.  The best time is reported.
 NFIRST     := 120#     smallest size to be timed.
-NLAST      := 3600#     largest size to be timed.
+NLAST      := 1800#     largest size to be timed.
 NINC       := 120#     increment between sizes.
 
 LDFLAGS    := -lpthread -m64 -lm -fopenmp
